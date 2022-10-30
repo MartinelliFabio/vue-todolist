@@ -54,26 +54,10 @@ const app = createApp({
         },
         rimuoviTask(i) {
             this.lista.splice(i, 1);
+            this.lista[i].done = !this.lista[i].done;
         },
         taskCompletato(i) {
-            this.lista[i].done=!this.lista[i].done;
+            this.lista[i].done = !this.lista[i].done;
         }
-    },
-    computed: {
-
-    },
-    mounted() {
-        console.log('in mounted');
-    },
-    created() {
-        console.log('in created');
-        console.log(this.surname);
-    },
-    beforeCreated() {
-        console.log('in before created');
-        console.log(this.surname);
-    },
-    beforeUpdate() {
-        console.log('in before update');
     },
 }).mount('#app');
